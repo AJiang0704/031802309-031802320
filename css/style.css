@@ -6,36 +6,45 @@ body {
     background-attachment: fixed;
 }
 
+h2 {
+    color: rgb(85, 85, 85);
+    font-family: "仿宋";
+}
+
 .input {
-    position: absolute;
-    left:50%;
-    top:50px;
-    transform: translate(-50%, 0);
+    margin-left:5%;
+    margin-top: 5%;
 }
 
 .input-text {
-    width: 900px;
-    height: 225px;
+    font-family: "仿宋";
+    border-radius: 30px;
+    font-size: 17px;
+    padding: 20px;
     background-color: rgba(255, 255, 255);
+    height: 500px;
+    width: 18%;
 }
 
 .input-commit {
-    width: 900px;
+    font-family: "仿宋";
+    font-size: 17px;
+    border-radius: 30px;
     background-color: rgba(255, 255, 255);
+    width: 20.9%;
+    
 }
 
 .show {
+    text-align: center;
     background-color: rgba(255, 255, 255);
-    position: absolute;
-    left:50%;
-    top:370px;
-    margin-bottom: 50px;
-    transform: translate(-50%, 0);
-    width: 900px;
+    border-radius: 30px;
+    width: 60%;
+    margin-left: 34%;
+    margin-top: -40.1%;
 }
 
 .show-tree {
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    
+
 }
