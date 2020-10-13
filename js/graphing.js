@@ -7,10 +7,11 @@ function GetData() {
     var mul_data = text.split("\n\n");
     var h = 0;
     var hide = [];
+    var count_tree = 0;
     for (var i = 0; i < mul_data.length; i++) {
+        count_tree++;
         var pic_data = mul_data[i].split("\n"); 
         var line = 0;
-        var count_tree = 0;
         for (var j = 0; j < pic_data.length; j++) {
             var per_data = pic_data[j].split("："); 
             var per_front = per_data[0];
@@ -22,7 +23,6 @@ function GetData() {
                     "children": []
                 }
                 TreeData[i] = teacher;
-                count_tree++;
             } else if(per_front.search("博士生") >= 0 || per_front.search("硕士生") >= 0 || per_front.search("本科生") >= 0) {
                 var grade = {
                     "name": per_front,
@@ -60,19 +60,19 @@ function GetData() {
                 for (n = 0; n < i; n++) {
                     check(TreeData[n], TreeData[i].name, TreeData[i], n);
                 }
-                if (!flag) {
-                    count_tree++;
-                }else{
+                if (flag) {
                     TreeData[i] = [];
                     hide[h] = i;
                     h++;
                 }
+                
             }
         }
 
     }
     var flag_hide = 0;
-    for (i = 0; i <= count_tree+2; i++) {
+    //alert(count_tree);
+    for (i = 0; i < count_tree; i++) {
         for(j = 0; j < h; j ++){
             if(hide[j] == i) {
                 flag_hide = 1;
