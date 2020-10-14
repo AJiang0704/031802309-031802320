@@ -4,6 +4,7 @@ var flag = 0;
 function GetData() {
     document.getElementById('show-tree').innerHTML = '';
     var text = document.getElementById("input-text").value;
+    if (!text) alert("输入不能为空哦");
     var mul_data = text.split("\n\n");
     var h = 0;
     var hide = [];
@@ -56,23 +57,28 @@ function GetData() {
                     }
                     TreeData[i].children[k] = identity;
                 }
-                //check
-                for (n = 0; n < i; n++) {
-                    check(TreeData[n], TreeData[i].name, TreeData[i], n);
-                }
-                if (flag) {
-                    TreeData[i] = [];
-                    hide[h] = i;
-                    h++;
-                }
-                
+
             }
+
         }
+        /*********check*********/
+        for (n = 0; n < i; n++) {
+            check(TreeData[n], TreeData[i].name, TreeData[i], n);
+        }
+        if (flag) {
+            TreeData[i] = [];
+            hide[h] = i;
+            h++;
+        }
+        flag = 0;
+        /*********check*********/
 
     }
+    /*********make*********/
     var flag_hide = 0;
     //alert(count_tree);
     for (i = 0; i < count_tree; i++) {
+        //alert(hide);
         for(j = 0; j < h; j ++){
             if(hide[j] == i) {
                 flag_hide = 1;
@@ -81,6 +87,7 @@ function GetData() {
         if(!flag_hide) MakeTreeGraph(i);
         flag_hide = 0;
     }
+    /*********make*********/
     
 }
 

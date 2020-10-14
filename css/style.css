@@ -35,13 +35,24 @@ h2 {
     
 }
 
+.button {
+    font-family: "仿宋";
+    font-size: 17px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255);
+    width: 20.9%;
+    text-align: center;
+    margin-left: 53.5%;
+    
+}
+
 .show {
     text-align: center;
     background-color: rgba(255, 255, 255);
     border-radius: 30px;
     width: 60%;
     margin-left: 34%;
-    margin-top: -40.1%;
+    margin-top: -611px;
 }
 
 .show-tree {
